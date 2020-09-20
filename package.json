@@ -9,6 +9,8 @@
     "test": "standard"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "js-cookie": "^2.2.1",
     "next": "9.5.3",
     "prop-types": "^15.7.2",

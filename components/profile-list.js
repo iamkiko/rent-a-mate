@@ -4,10 +4,11 @@ import Link from "next/link";
 import {
   Button,
   CardContainer,
+  CardInfo,
   Image,
   Location,
   Name,
-  CardInfo,
+  RightArrow,
 } from "./styles";
 
 const ProfileList = ({ profiles, initialSelectedPerson }) => {
@@ -37,7 +38,7 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
               passHref
             >
               <Button onClick={() => setSelectedPerson(profile)}>
-                View Profile
+                View Profile <RightArrow />
               </Button>
             </Link>
           </CardInfo>

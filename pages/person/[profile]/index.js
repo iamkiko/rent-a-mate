@@ -47,16 +47,6 @@ const UserProfile = () => {
     </>
   );
 };
-// export const getServerSideProps = async () => {
-//   const req = await fetch(`https://randomuser.me/api/?${login.uuid}`);
-//   const data = await req.json();
-
-//   return {
-//     props: {
-//       profiles: data.results,
-//     },
-//   };
-// };
 //prop-types here
 
 export default UserProfile;

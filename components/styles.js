@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { KeyboardArrowRight } from "@material-ui/icons";
 
 export const Container = styled.div`
   font-family: "Poppins", sans-serif;
@@ -27,6 +28,7 @@ export const CardInfo = styled.div`
   border-radius: 1rem;
   box-shadow: 0px 13px 24px 1px rgba(130, 166, 194, 1);
   margin: 1.6rem;
+  padding: 1.6rem;
   align-items: center;
 `;
 
@@ -40,21 +42,28 @@ export const Image = styled.img`
 
 export const Name = styled.h2`
   margin-bottom: 0;
+  font-weight: 300;
   color: #403f5c;
 `;
 
 export const Location = styled.h3`
+  font-weight: 300;
   color: #403f5c;
 `;
 
 export const Button = styled.button`
   background: #268508;
+  font-family: "Poppins", sans-serif;
   color: #fff;
-  max-width: 7rem;
+  max-width: 10rem;
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.6rem 0.6rem 0.6rem 2.5rem;
   border-radius: 0.6rem;
   margin-bottom: 1rem;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
+
+export const RightArrow = styled(KeyboardArrowRight)``;
