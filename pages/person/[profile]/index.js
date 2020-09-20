@@ -1,20 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Cookie from "js-cookie";
 import { useRouter } from "next/router";
-import getConfig from "next/config";
 
-const UserProfile = ({ selectedPerson }) => {
-  console.log("test", selectedPerson);
+const UserProfile = () => {
+  const specificUser = JSON.parse(Cookie.get("selectedPerson"));
+  console.log("specificUser on next page", specificUser);
+
   const router = useRouter();
-  // console.log("router", router);
-  // logs out the route we have 'hit'
-  // console.log(router.query);
   const { profile } = router.query;
-  // console.log(profile);
-  // console.log("persons", persons);
-  //   if (!persons) {
-  //     return <NotFound />;
-  //   }
 
   return (
     <>

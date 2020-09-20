@@ -6,7 +6,7 @@ import { CardContainer, Image, Location, Name, CardInfo } from "./styles";
 const ProfileList = ({ profiles, initialSelectedPerson }) => {
   const [persons, setPersons] = useState(profiles);
   const [selectedPerson, setSelectedPerson] = useState(initialSelectedPerson);
-  console.log("cookie value", selectedPerson);
+  console.log("selectedPerson", selectedPerson);
   useEffect(() => {
     Cookie.set("selectedPerson", selectedPerson);
   }, [selectedPerson]);
@@ -42,6 +42,7 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
 export const getServerSideProps = async ({ req }) => {
   const cookies = parseCookies(req);
   cookies.selectedPerson;
+  console.log("cookies in gssp", cookies);
   return {
     selectedPerson: cookies.selectedPerson,
   };
