@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Cookie from "js-cookie";
 import Link from "next/link";
-import { CardContainer, Image, Location, Name, CardInfo } from "./styles";
+import {
+  Button,
+  CardContainer,
+  Image,
+  Location,
+  Name,
+  CardInfo,
+} from "./styles";
 
 const ProfileList = ({ profiles, initialSelectedPerson }) => {
   const [persons, setPersons] = useState(profiles);
@@ -23,14 +30,15 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
             <Location>
               {profile.location.city}, {profile.location.country}
             </Location>
+
             <Link
               as={`person/${profile.name.first}-${profile.name.last}`}
               href={`person/[profile]`}
               passHref
             >
-              <button onClick={() => setSelectedPerson(profile)}>
+              <Button onClick={() => setSelectedPerson(profile)}>
                 View Profile
-              </button>
+              </Button>
             </Link>
           </CardInfo>
         );

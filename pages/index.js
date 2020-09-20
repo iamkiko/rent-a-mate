@@ -7,7 +7,7 @@ const Home = ({ profiles }) => {
   return (
     <Container>
       {/* <Navbar/> */}
-      <Title>Find your superhero</Title>
+      <Title>Find your superhero.</Title>
       <ProfileList profiles={profiles} />
     </Container>
   );

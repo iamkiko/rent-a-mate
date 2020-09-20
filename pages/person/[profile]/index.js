@@ -8,8 +8,8 @@ const UserProfile = () => {
   const specificUser = JSON.parse(Cookie.get("selectedPerson"));
   console.log("specificUser on next page", specificUser);
 
-  const router = useRouter();
-  const { profile } = router.query;
+  const router = useRouter(); // neeeded?
+  const { profile } = router.query; // needed?
 
   const convertDate = () => new Date().toISOString().slice(0, 10);
   const personDOB = convertDate(specificUser.dob.date);
