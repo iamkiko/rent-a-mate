@@ -24,7 +24,7 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
               {profile.location.city}, {profile.location.country}
             </Location>
             <Link
-              as={`person/${profile.login.uuid}`}
+              as={`person/${profile.name.first}-${profile.name.last}`}
               href={`person/[profile]`}
               passHref
             >

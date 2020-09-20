@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import ProfileList from "../components/profile-list.js";
 import { Container, Title } from "../components/styles";
 
-const Home = ({ profiles, selectedPerson }) => {
+const Home = ({ profiles }) => {
   return (
     <Container>
       {/* <Navbar/> */}
       <Title>Find your superhero</Title>
-      <ProfileList profiles={profiles} selectedPerson={selectedPerson} />
+      <ProfileList profiles={profiles} />
     </Container>
   );
 };
@@ -20,7 +20,6 @@ export const getServerSideProps = async () => {
   return {
     props: {
       profiles: data.results,
-      selectedPerson: selectedPerson,
     },
   };
 };
