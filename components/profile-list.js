@@ -1,12 +1,50 @@
-import React, { useState } from "react";
-import Card from "./card";
-const ProfileList = ({ profiles }) => {
+import React, { useEffect, useState } from "react";
+import Cookie from "js-cookie";
+import Link from "next/link";
+import { CardContainer, Image, Location, Name, CardInfo } from "./styles";
+
+const ProfileList = ({ profiles, initialSelectedPerson }) => {
   const [persons, setPersons] = useState(profiles);
+  const [selectedPerson, setSelectedPerson] = useState(initialSelectedPerson);
+  console.log("cookie value", selectedPerson);
+  useEffect(() => {
+    Cookie.set("selectedPerson", selectedPerson);
+  }, [selectedPerson]);
+
   return (
-    <div>
-      <Card persons={persons} />
-    </div>
+    <CardContainer>
+      {persons.map((profile) => {
+        return (
+          <CardInfo key={profile.login.uuid}>
+            <Image src={profile.picture.large} />
+            <Name>
+              {profile.name.title} {profile.name.first} {profile.name.last}
+            </Name>
+            <Location>
+              {profile.location.city}, {profile.location.country}
+            </Location>
+            <Link
+              as={`person/${profile.login.uuid}`}
+              href={`person/[profile]`}
+              passHref
+            >
+              <button onClick={() => setSelectedPerson(profile)}>
+                View Profile
+              </button>
+            </Link>
+          </CardInfo>
+        );
+      })}
+    </CardContainer>
   );
+};
+
+export const getServerSideProps = async ({ req }) => {
+  const cookies = parseCookies(req);
+  cookies.selectedPerson;
+  return {
+    selectedPerson: cookies.selectedPerson,
+  };
 };
 
 export default ProfileList;
