@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { CardContainer, Image, Location, Name, CardInfo } from "./styles";
 
 const Card = ({ persons, city, country, first, last, picture, title }) => {
@@ -10,12 +11,19 @@ const Card = ({ persons, city, country, first, last, picture, title }) => {
         return (
           <CardInfo key={profile.login.uuid}>
             <Image src={profile.picture.large} />
-            {/* <Name>
-        {title} {first} {last}
-      </Name>
-      <Location>
-        {city}, {country}
-      </Location> */}
+            <Name>
+              {profile.name.title} {profile.name.first} {profile.name.last}
+            </Name>
+            <Location>
+              {profile.location.city}, {profile.location.country}
+            </Location>
+            <Link
+              as={`person/${profile.login.uuid}`}
+              href={`person/[profile]`}
+              passHref
+            >
+              <button>View Profile</button>
+            </Link>
           </CardInfo>
         );
       })}
