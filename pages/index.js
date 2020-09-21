@@ -9,7 +9,7 @@ const Home = ({ profiles }) => {
     <Layout>
       <Container>
         <GlobalStyle />
-        <Title>Find your superhero.</Title>
+        <Title>RENT A MATE</Title>
         <ProfileList profiles={profiles} />
       </Container>
     </Layout>
@@ -26,7 +26,7 @@ export const getServerSideProps = async () => {
     headers: {
       "User-Agent":
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
+      Accept: "application/json",
     },
   });
   const data = await req.json();
