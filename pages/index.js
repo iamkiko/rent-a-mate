@@ -1,15 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Layout from "../components/layout";
 import ProfileList from "../components/profile-list.js";
-import { Container, Title } from "../components/styles";
+import { GlobalStyle, Container, Title } from "../components/styles";
 
 const Home = ({ profiles }) => {
   return (
-    <Container>
-      {/* <Navbar/> */}
-      <Title>Find your superhero.</Title>
-      <ProfileList profiles={profiles} />
-    </Container>
+    <Layout>
+      <Container>
+        <GlobalStyle />
+        {/* <Navbar/> */}
+        <Title>Find your superhero.</Title>
+        <ProfileList profiles={profiles} />
+      </Container>
+    </Layout>
   );
 };
 
