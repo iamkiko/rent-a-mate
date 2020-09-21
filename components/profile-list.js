@@ -32,11 +32,11 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
     const getGender = () => {
       if (selectedGender === "male") {
         return setCardList(
-          cardList.filter((person) => person.gender === "male")
+          profiles.filter((person) => person.gender === "male")
         );
       } else if (selectedGender === "female") {
         return setCardList(
-          cardList.filter((person) => person.gender === "female")
+          profiles.filter((person) => person.gender === "female")
         );
       } else if (selectedGender === null) {
         return setCardList(profiles);
