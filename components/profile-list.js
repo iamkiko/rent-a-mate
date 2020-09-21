@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cookie from "js-cookie";
 import Link from "next/link";
-import useSWR from "swr";
+import PropTypes from "prop-types";
 import Search from "./search";
 import {
   Button,
@@ -16,12 +16,11 @@ import {
 } from "./styles";
 
 const ProfileList = ({ profiles, initialSelectedPerson }) => {
-  const [persons, setPersons] = useState(profiles);
   const [selectedPerson, setSelectedPerson] = useState(initialSelectedPerson);
   const [sortAlphabetical, setSortAlphabetical] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedGender, setSelectedGender] = useState(null);
-  const [cardList, setCardList] = useState([...persons]);
+  const [cardList, setCardList] = useState([...profiles]);
 
   // Set cookie for state to remember user on specific page
   useEffect(() => {
@@ -32,17 +31,15 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
   useEffect(() => {
     const getGender = () => {
       if (selectedGender === "male") {
-        let cardList = persons;
         return setCardList(
           cardList.filter((person) => person.gender === "male")
         );
       } else if (selectedGender === "female") {
-        let cardList = persons;
         return setCardList(
           cardList.filter((person) => person.gender === "female")
         );
       } else if (selectedGender === null) {
-        return setCardList(persons);
+        return setCardList(profiles);
       }
     };
 
@@ -57,7 +54,6 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
   // Search filtering
   useEffect(() => {
     const searchTerm = () => {
-      let cardList = persons;
       return setCardList(
         cardList.filter(
           (person) =>
@@ -152,6 +148,11 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
       </CardContainer>
     </>
   );
+};
+
+ProfileList.propTypes = {
+  profiles: PropTypes.array.isRequired,
+  initialSelectedPerson: PropTypes.object,
 };
 
 export const getServerSideProps = async ({ req }) => {

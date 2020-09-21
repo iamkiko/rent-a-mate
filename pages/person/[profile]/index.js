@@ -15,13 +15,6 @@ import {
 import { LocationOn, Phone } from "@material-ui/icons";
 const UserProfile = () => {
   const specificUser = JSON.parse(Cookie.get("selectedPerson"));
-  console.log("specificUser on next page", specificUser);
-
-  const router = useRouter(); // neeeded?
-  const { profile } = router.query; // needed?
-
-  // const dob = specificUser.dob.date;
-  console.log(new Date().toISOString().slice(0, 10));
 
   return (
     <Layout>
@@ -63,6 +56,5 @@ const UserProfile = () => {
     </Layout>
   );
 };
-//prop-types here
 
 export default UserProfile;

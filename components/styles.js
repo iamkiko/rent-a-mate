@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { KeyboardArrowRight } from "@material-ui/icons";
 import { createGlobalStyle } from "styled-components";
-// import Link from "next/link";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -20,6 +19,9 @@ export const Title = styled.h1`
   -webkit-text-stroke: 2px #c3ebee;
   margin-top: 0;
   margin-bottom: 1.2rem;
+  @media (max-width: 1024px) {
+    font-size: 2.6rem;
+  }
 `;
 
 export const CardContainer = styled.div`
