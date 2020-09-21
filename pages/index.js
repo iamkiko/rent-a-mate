@@ -21,7 +21,7 @@ Home.propTypes = {
 };
 
 export const getServerSideProps = async () => {
-  const req = await fetch(`https://randomuser.me/api/?results=50`);
+  const req = await fetch(`https://randomuser.me/api/?results=50?format=json`);
   const data = await req.json();
 
   return {
