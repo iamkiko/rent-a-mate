@@ -55,10 +55,10 @@ const ProfileList = ({ profiles, initialSelectedPerson }) => {
   useEffect(() => {
     const searchTerm = () => {
       return setCardList(
-        cardList.filter(
-          (person) =>
-            person.name.first.toLowerCase().includes(query.toLowerCase()) ||
-            person.name.last.toLowerCase().includes(query.toLowerCase())
+        profiles.filter(
+          (profile) =>
+            profile.name.first.toLowerCase().includes(query.toLowerCase()) ||
+            profile.name.last.toLowerCase().includes(query.toLowerCase())
         )
       );
     };

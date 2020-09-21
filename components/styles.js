@@ -42,6 +42,10 @@ export const CardInfo = styled.div`
   margin: 1.6rem;
   padding: 1.6rem;
   align-items: center;
+
+  @media (max-width: 480px) {
+    flex-basis: 100%;
+  }
 `;
 
 export const Image = styled.img`
@@ -158,6 +162,10 @@ export const NavLink = styled.a`
   margin: 2.8rem;
   font-size: 2rem;
   color: #2c85c9;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
 export const SubContainer = styled.div`
@@ -165,7 +173,7 @@ export const SubContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     input {
