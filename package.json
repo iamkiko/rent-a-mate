@@ -16,7 +16,8 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "swr": "^0.3.3"
   },
   "devDependencies": {
     "standard": "^14.3.4"

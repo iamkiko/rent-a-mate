@@ -3,10 +3,7 @@ import Head from "next/head";
 import { KeyboardArrowLeft } from "@material-ui/icons";
 import { NavLink } from "../components/styles";
 
-export default function Layout({
-  children,
-  title = "This is the default title",
-}) {
+export default function Layout({ children, title = "Find your superhero." }) {
   return (
     <div>
       <Head>
